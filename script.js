@@ -28,16 +28,21 @@ function inLibrary(newBook) {
 }
 
 function displayBooks() {
+    clearLibraryDisplay()
     myLibrary.forEach(book => {
         let currentBook = document.createElement("div");
-        currentBook.textContent += `${book.title} by ${book.author}, ${book.pages} pages`;
+        currentBook.textContent = `${book.title} by ${book.author}, ${book.pages} pages`;
         libraryContainer.appendChild(currentBook);
     })
+}
+
+function clearLibraryDisplay() {
+    libraryContainer.textContent = "";
 }
 
 
 // Event Listeners
 newBookBtn.addEventListener("click", () => {
-    const newBook = new Book("Three-Ring Circus", "Jeff Pearlman", "409", false);
+    const newBook = new Book("Three-Ring Circus", "Jeff Pearlman", "409", false); // replace with user input for book title, author, pages, read
     addBookToLibrary(newBook);
 });
