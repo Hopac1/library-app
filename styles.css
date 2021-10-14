@@ -1,3 +1,12 @@
 body {
     background-color: rgb(112, 89, 60);
 }
+
+.modal-container {
+    opacity: rgba(0,0,0,0.5);
+    /* background-color: rgb(182, 182, 182); */
+}
+
+.modal {
+    background-color: #f4f4f4;
+}
