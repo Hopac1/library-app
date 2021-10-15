@@ -1,5 +1,7 @@
-const libraryContainer = document.querySelector(".library-container")
-const newBookBtn = document.querySelector(".new-book-btn")
+const libraryContainer = document.querySelector(".library-container");
+const modalContainer = document.querySelector(".modal-container");
+const closeModalX = document.querySelector(".close-modal");
+const newBookBtn = document.querySelector(".new-book-btn");
 let myLibrary = [];
 
 class Book {
@@ -44,5 +46,15 @@ function clearLibraryDisplay() {
 // Event Listeners
 newBookBtn.addEventListener("click", () => {
     const newBook = new Book("Three-Ring Circus", "Jeff Pearlman", "409", false); // replace with user input for book title, author, pages, read
+    modalContainer.style.display = "flex";
+
     addBookToLibrary(newBook);
 });
+
+modalContainer.addEventListener("click", () => {
+    modalContainer.style.display = "none";
+}) 
+
+closeModalX.addEventListener("click", () => {
+    modalContainer.style.display = "none";
+}) 
