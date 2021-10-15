@@ -1,12 +1,50 @@
-body {
-    background-color: rgb(112, 89, 60);
+/* body {
+    background-color: rgb(196, 238, 230);
+} */
+
+h2 {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+form {
+    margin: 10px;
 }
 
 .modal-container {
-    opacity: rgba(0,0,0,0.5);
-    /* background-color: rgb(182, 182, 182); */
+    background-color: rgba(0,0,0, 0.3);
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+
 }
 
 .modal {
     background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+.close-modal {
+    margin-right: 10px;
+    color: rgb(138, 138, 138);
+    font-size: 24px;
+}
+
+.close-modal:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.form-contents {
+    margin-bottom: 5px ;
+}
+
+#submit-btn {
+    margin-top: 15px;
 }
