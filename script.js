@@ -8,6 +8,8 @@ const bookPagesInput = document.getElementById("book-pages");
 const readOrNotInput = document.getElementById("read-or-not");
 const addBookBtn = document.getElementById("submit-btn");
 const newBookForm = document.getElementById("new-book-form");
+const radioYes = document.getElementById("read");
+const radioNo = document.getElementById("not-read");
 let myLibrary = [];
 
 class Book {
@@ -39,7 +41,7 @@ function displayBooks() {
     clearLibraryDisplay()
     myLibrary.forEach(book => {
         let currentBook = document.createElement("div");
-        currentBook.textContent = `${book.title} by ${book.author}, ${book.pages} pages`;
+        currentBook.textContent = `${book.title} by ${book.author}, ${book.pages} pages, ${book.isRead}`;
         libraryContainer.appendChild(currentBook);
     })
 }
@@ -52,8 +54,16 @@ function storeBookInfo() {
     const title = bookTitleInput.value;
     const author = bookAuthorInput.value;
     const pages = bookPagesInput.value;
-    const read = readOrNotInput.value;
-    return new Book(title, author, pages, false);
+    // const read = readOrNotInput.checked;
+    let read = radioYes.checked;
+
+    if (read === true) {
+        read = "read";
+    } else {
+        read = "not read";
+    }
+
+    return new Book(title, author, pages, read);
 }
 
 // Event Listeners
@@ -63,7 +73,7 @@ newBookBtn.addEventListener("click", () => {
 
 addBookBtn.addEventListener("click", () => {
     addBookToLibrary(storeBookInfo());
-    // modalContainer.style.display = "none";
+    modalContainer.style.display = "none";
 });
 // modalContainer.addEventListener("click", () => {
     //     modalContainer.style.display = "none";
