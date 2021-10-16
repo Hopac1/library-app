@@ -2,6 +2,12 @@ const libraryContainer = document.querySelector(".library-container");
 const modalContainer = document.querySelector(".modal-container");
 const closeModalX = document.querySelector(".close-modal");
 const newBookBtn = document.querySelector(".new-book-btn");
+const bookTitleInput = document.getElementById("book-title");
+const bookAuthorInput = document.getElementById("book-author");
+const bookPagesInput = document.getElementById("book-pages");
+const readOrNotInput = document.getElementById("read-or-not");
+const addBookBtn = document.getElementById("submit-btn");
+const newBookForm = document.getElementById("new-book-form");
 let myLibrary = [];
 
 class Book {
@@ -42,19 +48,27 @@ function clearLibraryDisplay() {
     libraryContainer.textContent = "";
 }
 
+function storeBookInfo() {
+    const title = bookTitleInput.value;
+    const author = bookAuthorInput.value;
+    const pages = bookPagesInput.value;
+    const read = readOrNotInput.value;
+    return new Book(title, author, pages, false);
+}
 
 // Event Listeners
 newBookBtn.addEventListener("click", () => {
-    const newBook = new Book("Three-Ring Circus", "Jeff Pearlman", "409", false); // replace with user input for book title, author, pages, read
     modalContainer.style.display = "flex";
-
-    addBookToLibrary(newBook);
 });
 
-modalContainer.addEventListener("click", () => {
-    modalContainer.style.display = "none";
-}) 
+addBookBtn.addEventListener("click", () => {
+    addBookToLibrary(storeBookInfo());
+    // modalContainer.style.display = "none";
+});
+// modalContainer.addEventListener("click", () => {
+    //     modalContainer.style.display = "none";
+// }) 
 
 closeModalX.addEventListener("click", () => {
     modalContainer.style.display = "none";
-}) 
+});
