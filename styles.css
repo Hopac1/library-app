@@ -1,6 +1,6 @@
-/* body {
-    background-color: rgb(196, 238, 230);
-} */
+body {
+    background-color: #89a8ff;
+}
 
 h2 {
     display: inline-block;
@@ -12,8 +12,17 @@ form {
     margin: 10px;
 }
 
+.button {
+    background-color: #ffb94f;
+    border-radius: 10px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
 .modal-container {
-    background-color: rgba(0,0,0, 0.3);
+    background-color: rgba(223, 223, 223, 0.5);
     display: none;
     width: 100vw;
     height: 100vh;
@@ -26,8 +35,9 @@ form {
 }
 
 .modal {
-    background-color: #f4f4f4;
+    background-color: #ddedea;
     border-radius: 10px;
+    opacity: 1;
 }
 
 .close-modal {
