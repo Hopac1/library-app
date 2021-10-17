@@ -41,6 +41,7 @@ function displayBooks() {
     clearLibraryDisplay()
     myLibrary.forEach(book => {
         let currentBook = document.createElement("div");
+        currentBook.classList = "book";
         currentBook.textContent = `${book.title} by ${book.author}, ${book.pages} pages, ${book.isRead}`;
         libraryContainer.appendChild(currentBook);
     })
@@ -54,7 +55,6 @@ function storeBookInfo() {
     const title = bookTitleInput.value;
     const author = bookAuthorInput.value;
     const pages = bookPagesInput.value;
-    // const read = readOrNotInput.checked;
     let read = radioYes.checked;
 
     if (read === true) {
@@ -75,9 +75,6 @@ addBookBtn.addEventListener("click", () => {
     addBookToLibrary(storeBookInfo());
     modalContainer.style.display = "none";
 });
-// modalContainer.addEventListener("click", () => {
-    //     modalContainer.style.display = "none";
-// }) 
 
 closeModalX.addEventListener("click", () => {
     modalContainer.style.display = "none";
