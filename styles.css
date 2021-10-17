@@ -48,3 +48,37 @@ form {
 #submit-btn {
     margin-top: 15px;
 }
+
+.book {
+    border: solid 1px black;
+    background-color: coral;
+}
+
+.library-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgb(150, 150, 150);
+}
+
+#footer-p {
+    display: inline-block;
+    vertical-align: super;
+    margin-right: 0.5rem;
+}
+
+#github-logo {
+    height: 20px;
+}
+
+#github-logo:hover {
+    height: 23px;
+    cursor: pointer;
+}
