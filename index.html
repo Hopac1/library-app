@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="/favicon.png"/>
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
     <title>My Library</title>
 </head>
 <body>
@@ -33,16 +33,19 @@
                 <input type="text" id="book-pages" class="form-contents" name="book-pages"><br>
 
                 <label for="read-or-not" class="form-contents">Have you read it? </label><br>
-                <input type="radio" id="read" class="form-contents" name="read-or-not" value="yes">
+                <input type="radio" id="read" class="form-contents" name="read-or-not">
                 <label for="read-or-not" class="form-contents">Yes</label><br>
-
-                <input type="radio" id="not-read" class="form-contents" name="read-or-not" value="no">
+                <input type="radio" id="not-read" class="form-contents" name="read-or-not" checked="true">
                 <label for="read-or-not" class="form-contents">No</label><br>
 
                 <input type="button" id="submit-btn" name="submit-btn" class="form-contents" value="Add Book">
                 <!-- <button id="submit-btn" class="form-contents">Add Book</button> -->
             </form>
         </div>
+    </div>
+    <div id="footer">
+        <p id="footer-p">Made by Chris K</p>
+        <a href="https://github.com/Hopac1"><img id="github-logo" src="images/github.png" alt="github-logo"></a>
     </div>
 </body>
 <script src="/script.js"></script>
