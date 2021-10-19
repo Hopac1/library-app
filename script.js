@@ -10,6 +10,7 @@ const addBookBtn = document.getElementById("submit-btn");
 const newBookForm = document.getElementById("new-book-form");
 const radioYes = document.getElementById("read");
 const radioNo = document.getElementById("not-read");
+const myBr = document.createElement("br");
 let myLibrary = [];
 
 class Book {
@@ -42,7 +43,7 @@ function displayBooks() {
     myLibrary.forEach(book => {
         let currentBook = document.createElement("div");
         currentBook.classList = "book";
-        currentBook.textContent = `${book.title} by ${book.author}, ${book.pages} pages, ${book.isRead}`;
+        currentBook.textContent = `${book.title}\r\n ${book.author}\r\n ${book.pages} pages\r\n ${book.isRead}`;
         libraryContainer.appendChild(currentBook);
     })
 }
