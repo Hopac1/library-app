@@ -1,5 +1,10 @@
 body {
-    background-color: #89a8ff;
+    background-color: #8ebefc;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    margin-left: 1rem;
 }
 
 h2 {
@@ -12,9 +17,23 @@ form {
     margin: 10px;
 }
 
+.header {
+    background-color: rgb(240, 255, 255);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.new-book {
+    position: relative;
+    top: 6rem;
+}
+
 .button {
     background-color: #ffb94f;
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: 0px, 2px, 2px 0px;
 }
 
 .button:hover {
@@ -61,12 +80,20 @@ form {
 
 .book {
     border: solid 1px black;
-    background-color: coral;
+    background-color: rgb(219, 219, 219);
+    border-radius: 5px;
+    margin: 0 2rem 2rem;
+    height: 10rem;
+    white-space: pre-line;
+    text-align: center;
+    line-height: 2rem;
 }
 
 .library-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    top: 9rem;
 }
 
 #footer {
