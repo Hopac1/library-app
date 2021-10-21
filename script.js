@@ -10,6 +10,9 @@ const addBookBtn = document.getElementById("submit-btn");
 const newBookForm = document.getElementById("new-book-form");
 const radioYes = document.getElementById("read");
 const radioNo = document.getElementById("not-read");
+
+
+
 const myBr = document.createElement("br");
 let myLibrary = [];
 
@@ -42,8 +45,46 @@ function displayBooks() {
     clearLibraryDisplay()
     myLibrary.forEach(book => {
         let currentBook = document.createElement("div");
+        let removeButton = document.createElement("button");
+        let changeReadStatusButton = document.createElement("button");
+        const titleP = document.createElement("h3");
+        const authorP = document.createElement("h3");
+        const pagesP = document.createElement("h3");
+        const readP = document.createElement("h3");
+
+        
+        // let bookInfo = document.createTextNode(`${book.title}\r\n ${book.author}\r\n ${book.pages} pages\r\n ${book.isRead}`); OLD
+        let bookTitle = document.createTextNode(book.title);
+        let bookAuthor = document.createTextNode(book.author);
+        let bookPages = document.createTextNode(book.pages);
+        let bookRead = document.createTextNode(book.isRead);
+
+        // pTag.classList = "book-info";
+        titleP.classList = "book-info";
+        authorP.classList = "book-info";
+        pagesP.classList = "book-info";
+        readP.classList = "book-info";
         currentBook.classList = "book";
-        currentBook.textContent = `${book.title}\r\n ${book.author}\r\n ${book.pages} pages\r\n ${book.isRead}`;
+        removeButton.classList = "book-button remove"
+        changeReadStatusButton.classList = "book-button";
+        
+        // currentBook.textContent = `${book.title}\r\n ${book.author}\r\n ${book.pages} pages\r\n ${book.isRead}`; OLD OLD 
+        
+        // pTag.appendChild(bookInfo)
+        titleP.appendChild(bookTitle);
+        authorP.appendChild(bookAuthor);
+        pagesP.appendChild(bookPages);
+        readP.appendChild(bookRead);
+
+        currentBook.appendChild(titleP);
+        currentBook.appendChild(authorP);
+        currentBook.appendChild(pagesP);
+        currentBook.appendChild(readP);
+        currentBook.appendChild(removeButton);
+        removeButton = removeButton.textContent = "Remove";
+        currentBook.appendChild(changeReadStatusButton);
+
+        changeReadStatusButton = changeReadStatusButton.textContent = "Change Read Status";
         libraryContainer.appendChild(currentBook);
     })
 }
