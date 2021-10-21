@@ -1,11 +1,9 @@
 body {
     background-color: #8ebefc;
     font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
-h1 {
-    margin-left: 1rem;
-}
 
 h2 {
     display: inline-block;
@@ -17,23 +15,32 @@ form {
     margin: 10px;
 }
 
+/* HEADER */
+h1 {
+    margin: 1.5rem 0 1.5rem 5rem;
+    font-size: 80px;
+}
+
 .header {
     background-color: rgb(240, 255, 255);
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
+    display: flex;
+    border-bottom: 1px solid black;
+}
+
+/* BODY */
+.button {
+    border-radius: 5px;
 }
 
 .new-book {
-    position: relative;
-    top: 6rem;
+    display: flex;
+    justify-content: center;
 }
 
-.button {
-    background-color: #ffb94f;
-    border-radius: 5px;
-    box-shadow: 0px, 2px, 2px 0px;
+.new-book-btn {
+    font-size: 26px;
+    background-color: aquamarine;
+    margin-top: 2rem;
 }
 
 .button:hover {
@@ -82,30 +89,35 @@ form {
     border: solid 1px black;
     background-color: rgb(219, 219, 219);
     border-radius: 5px;
-    margin: 0 2rem 2rem;
-    height: 10rem;
-    white-space: pre-line;
-    text-align: center;
-    line-height: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .library-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    position: relative;
-    top: 9rem;
+    gap: 2rem;
+    margin: 6rem;
 }
 
+.book-button {
+    margin: 1rem;
+    font-size: 22px;
+}
+
+/* FOOTER */
+
 #footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
     text-align: center;
-    border-top: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #footer-p {
+    font-size: 20px;
     display: inline-block;
     vertical-align: super;
     margin-right: 0.5rem;
