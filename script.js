@@ -87,6 +87,11 @@ function displayBooks() {
         changeReadStatusButton = changeReadStatusButton.textContent = "Change Read Status";
         libraryContainer.appendChild(currentBook);
     })
+    const removeBookBtn = document.querySelector(".remove");
+    removeBookBtn.addEventListener("click", (e) => {
+        myLibrary.splice(myLibrary.indexOf(e.currentTarget),1);
+        e.target.parentNode.remove();
+    });
 }
 
 function clearLibraryDisplay() {
@@ -121,3 +126,4 @@ addBookBtn.addEventListener("click", () => {
 closeModalX.addEventListener("click", () => {
     modalContainer.style.display = "none";
 });
+
