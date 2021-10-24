@@ -94,6 +94,10 @@ h1 {
     align-items: center;
 }
 
+.book-info {
+    margin: 5px;
+}
+
 .library-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -114,6 +118,9 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 #footer-p {
