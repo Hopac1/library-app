@@ -55,8 +55,8 @@ function displayBooks() {
         
         // let bookInfo = document.createTextNode(`${book.title}\r\n ${book.author}\r\n ${book.pages} pages\r\n ${book.isRead}`); OLD
         let bookTitle = document.createTextNode(book.title);
-        let bookAuthor = document.createTextNode(book.author);
-        let bookPages = document.createTextNode(book.pages);
+        let bookAuthor = document.createTextNode(`by ${book.author}`);
+        let bookPages = document.createTextNode(`${book.pages} pages`);
         let bookRead = document.createTextNode(book.isRead);
 
         // pTag.classList = "book-info";
@@ -87,11 +87,17 @@ function displayBooks() {
         changeReadStatusButton = changeReadStatusButton.textContent = "Change Read Status";
         libraryContainer.appendChild(currentBook);
     })
-    const removeBookBtn = document.querySelector(".remove");
-    removeBookBtn.addEventListener("click", (e) => {
-        myLibrary.splice(myLibrary.indexOf(e.currentTarget),1);
-        e.target.parentNode.remove();
-    });
+    const removeBookBtn = document.querySelectorAll(".remove");
+    removeBookBtn.forEach(button => button.addEventListener("click", (e) => {
+        let bookCardTitle = e.target.parentNode.firstChild.textContent;
+        let obj = myLibrary.find(aBook => aBook.title === bookCardTitle);
+        myLibrary.splice(myLibrary.indexOf(obj),1);
+        return e.target.parentNode.remove();
+    }));  
+}
+
+function renderAllInMyLibrary() {
+    myLibrary.forEach
 }
 
 function clearLibraryDisplay() {
