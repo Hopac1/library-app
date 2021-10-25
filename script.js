@@ -5,15 +5,9 @@ const newBookBtn = document.querySelector(".new-book-btn");
 const bookTitleInput = document.getElementById("book-title");
 const bookAuthorInput = document.getElementById("book-author");
 const bookPagesInput = document.getElementById("book-pages");
-const readOrNotInput = document.getElementById("read-or-not");
 const addBookBtn = document.getElementById("submit-btn");
-const newBookForm = document.getElementById("new-book-form");
 const radioYes = document.getElementById("read");
-const radioNo = document.getElementById("not-read");
 
-
-
-const myBr = document.createElement("br");
 let myLibrary = [];
 
 class Book {
@@ -47,44 +41,39 @@ function displayBooks() {
         let currentBook = document.createElement("div");
         let removeButton = document.createElement("button");
         let changeReadStatusButton = document.createElement("button");
-        const titleP = document.createElement("h3");
-        const authorP = document.createElement("h3");
-        const pagesP = document.createElement("h3");
-        const readP = document.createElement("h3");
+        const titleP = document.createElement("h2");
+        const authorP = document.createElement("h4");
+        const pagesP = document.createElement("h4");
+        // const readP = document.createElement("h3");
 
-        
-        // let bookInfo = document.createTextNode(`${book.title}\r\n ${book.author}\r\n ${book.pages} pages\r\n ${book.isRead}`); OLD
         let bookTitle = document.createTextNode(book.title);
         let bookAuthor = document.createTextNode(`by ${book.author}`);
         let bookPages = document.createTextNode(`${book.pages} pages`);
         let bookRead = document.createTextNode(book.isRead);
 
-        // pTag.classList = "book-info";
         titleP.classList = "book-info";
         authorP.classList = "book-info";
         pagesP.classList = "book-info";
-        readP.classList = "book-info";
+        // readP.classList = "book-info";
         currentBook.classList = "book";
+        changeReadStatusButton.classList = "book-button read-status-btn";
         removeButton.classList = "book-button remove"
-        changeReadStatusButton.classList = "book-button";
-        
-        // currentBook.textContent = `${book.title}\r\n ${book.author}\r\n ${book.pages} pages\r\n ${book.isRead}`; OLD OLD 
-        
-        // pTag.appendChild(bookInfo)
+
         titleP.appendChild(bookTitle);
         authorP.appendChild(bookAuthor);
         pagesP.appendChild(bookPages);
-        readP.appendChild(bookRead);
+        // readP.appendChild(bookRead);
 
         currentBook.appendChild(titleP);
         currentBook.appendChild(authorP);
         currentBook.appendChild(pagesP);
-        currentBook.appendChild(readP);
+        // currentBook.appendChild(readP);
+        currentBook.appendChild(changeReadStatusButton);
         currentBook.appendChild(removeButton);
         removeButton = removeButton.textContent = "Remove";
-        currentBook.appendChild(changeReadStatusButton);
 
-        changeReadStatusButton = changeReadStatusButton.textContent = "Change Read Status";
+        changeReadStatusButton = changeReadStatusButton.textContent = `${book.isRead}`;
+
         libraryContainer.appendChild(currentBook);
     })
     const removeBookBtn = document.querySelectorAll(".remove");
@@ -93,11 +82,25 @@ function displayBooks() {
         let obj = myLibrary.find(aBook => aBook.title === bookCardTitle);
         myLibrary.splice(myLibrary.indexOf(obj),1);
         return e.target.parentNode.remove();
-    }));  
-}
+    }));
 
-function renderAllInMyLibrary() {
-    myLibrary.forEach
+    const changeReadStatusBtn = document.querySelectorAll(".read-status-btn");
+    changeReadStatusBtn.forEach(button => button.addEventListener("click", (e) => {
+        let bookCardIsRead = e.target.parentNode.children[3].textContent;
+        let obj = myLibrary.find(aBook => aBook.isRead === bookCardIsRead);
+        console.log(bookCardIsRead);
+        console.log(obj);
+        if (obj.isRead === "read") {
+            obj.isRead = "not read";
+            // e.target.parentNode.children[3].textContent = obj.isRead;
+            e.target.parentNode.children[3].textContent = obj.isRead;
+
+        } else if (obj.isRead === "not read") {
+            obj.isRead = "read";
+            // e.target.parentNode.children[3].textContent = obj.isRead;
+            e.target.parentNode.children[3].textContent = obj.isRead;
+        }
+    }))
 }
 
 function clearLibraryDisplay() {
