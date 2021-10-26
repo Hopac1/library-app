@@ -43,8 +43,12 @@ h1 {
 }
 
 .new-book-btn {
-    font-size: 26px;
-    background-color: aquamarine;
+    height: 4rem;
+    margin-top: 2rem;
+}
+
+.new-book-btn:hover {
+    height: 4.2rem;
     margin-top: 2rem;
 }
 
