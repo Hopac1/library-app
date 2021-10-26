@@ -21,10 +21,17 @@ h1 {
     font-size: 80px;
 }
 
+a {
+    color: black;
+}
+
+
 .header {
     background-color: rgb(240, 255, 255);
-    display: flex;
     border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* BODY */
@@ -45,6 +52,7 @@ h1 {
 .new-book-btn {
     height: 4rem;
     margin-top: 2rem;
+    margin-right: 5rem;
 }
 
 .new-book-btn:hover {
