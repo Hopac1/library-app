@@ -44,17 +44,14 @@ function displayBooks() {
         const titleP = document.createElement("h2");
         const authorP = document.createElement("h4");
         const pagesP = document.createElement("h4");
-        // const readP = document.createElement("h3");
 
         let bookTitle = document.createTextNode(book.title);
         let bookAuthor = document.createTextNode(`by ${book.author}`);
         let bookPages = document.createTextNode(`${book.pages} pages`);
-        let bookRead = document.createTextNode(book.isRead);
 
         titleP.classList = "book-info";
         authorP.classList = "book-info";
         pagesP.classList = "book-info";
-        // readP.classList = "book-info";
         currentBook.classList = "book";
         changeReadStatusButton.classList = "book-button read-status-btn";
         removeButton.classList = "book-button remove"
@@ -62,16 +59,14 @@ function displayBooks() {
         titleP.appendChild(bookTitle);
         authorP.appendChild(bookAuthor);
         pagesP.appendChild(bookPages);
-        // readP.appendChild(bookRead);
 
         currentBook.appendChild(titleP);
         currentBook.appendChild(authorP);
         currentBook.appendChild(pagesP);
-        // currentBook.appendChild(readP);
         currentBook.appendChild(changeReadStatusButton);
         currentBook.appendChild(removeButton);
-        removeButton = removeButton.textContent = "Remove";
 
+        removeButton = removeButton.textContent = "Remove";
         changeReadStatusButton = changeReadStatusButton.textContent = `${book.isRead}`;
 
         libraryContainer.appendChild(currentBook);
@@ -92,12 +87,10 @@ function displayBooks() {
         console.log(obj);
         if (obj.isRead === "read") {
             obj.isRead = "not read";
-            // e.target.parentNode.children[3].textContent = obj.isRead;
             e.target.parentNode.children[3].textContent = obj.isRead;
 
         } else if (obj.isRead === "not read") {
             obj.isRead = "read";
-            // e.target.parentNode.children[3].textContent = obj.isRead;
             e.target.parentNode.children[3].textContent = obj.isRead;
         }
     }))
