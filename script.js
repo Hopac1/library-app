@@ -115,14 +115,24 @@ function storeBookInfo() {
     return new Book(title, author, pages, read);
 }
 
+function formCheck(title, author, pages) {
+    if (!title.value || !author.value || !pages.value) {
+        alert("Please fill each field.");
+        return false;
+    } else { return true }
+};
+
 // Event Listeners
 newBookBtn.addEventListener("click", () => {
     modalContainer.style.display = "flex";
 });
 
-addBookBtn.addEventListener("click", () => {
-    addBookToLibrary(storeBookInfo());
-    modalContainer.style.display = "none";
+addBookBtn.addEventListener("click", (e) => {
+    if (formCheck(bookTitleInput, bookAuthorInput, bookPagesInput)) {
+        addBookToLibrary(storeBookInfo());
+        modalContainer.style.display = "none";
+    }
+    
 });
 
 closeModalX.addEventListener("click", () => {
